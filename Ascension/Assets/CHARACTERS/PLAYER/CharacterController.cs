@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CharacterController : Character
 {
+    [SerializeField]
+    Texture2D cursorImage;
 
-    public Texture2D cursorImage;
+    [SerializeField]
+    TrailRenderer playerTrail;
 
 
     public void Awake()
@@ -15,37 +18,50 @@ public class CharacterController : Character
 
     public override void FixedUpdate()
     {
-        MovePlayerReticle(cursorImage);
+        MoveCursor(cursorImage);
     }
 
 
-    void MovePlayerReticle(Texture2D cursorImage) 
+    void MoveCursor(Texture2D cursorImage) 
     {
         Cursor.SetCursor(cursorImage, Vector2.zero, CursorMode.ForceSoftware);
     }
     
-    public float zAxisSpeed = 5.0f;
-    public float xAxisSpeed = 10.0f;
+    public const float zAxisSpeed = 20.0f;
+    public const float xAxisSpeed = 20.0f;
 
     void Update()
     {
-        // Get the horizontal and vertical axis.
+        // Multiply this objects X and Z axies by the players speed variables for the related axis
 
         float zAxis = Input.GetAxis("Vertical") * zAxisSpeed;
         float xAxis = Input.GetAxis("Horizontal") * xAxisSpeed;
 
-        // Make it move independant of frame rate
+        // Make this object move independant of frame rate
 
         zAxis *= Time.deltaTime;
         xAxis *= Time.deltaTime;
 
-        // translate this object along the z-axis and x-axis
+        // translate this object along the z-axis and x-axis by using the players speed variables
+
         transform.Translate(xAxis, 0, zAxis);
+
+        // if right mouse button is held down, the player leaves a trail
+
+        // else the trail is not there
+
+
+        if (Input.GetMouseButton(2))
+        {
+            playerTrail.gameObject.SetActive(true);
+        }
+        else
+        {
+            playerTrail.gameObject.SetActive(false);
+        }
 
     }
 
-    // The CHARACTER CONTROLLER will have its functinality split into states
-
-    // The current state will be controlled by a state machine
+    // The CHARACTER CONTROLLER will have its functinality split into states and be controlled by a state machine
 
 }
