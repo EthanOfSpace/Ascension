@@ -342,33 +342,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435409250640196266, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
-      propertyPath: playerTrail
+      propertyPath: cursorImage
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435409251263297025, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8038172
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435409251263297025, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5948764
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435409251263297025, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435409251263297025, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435409251263297025, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 73.008
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435409251263297030, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: b7ab6e2168ac6f14cb25795461347c13, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34393d885fd61cc4c9c6ece0731b0c47, type: 3}
 --- !u!1001 &6581559179425145709

@@ -10,6 +10,9 @@ public class CharacterController : Character
     [SerializeField]
     TrailRenderer playerTrail;
 
+    [SerializeField]
+    SpriteRenderer playerSprite;
+
 
     public void Awake()
     {
@@ -46,18 +49,21 @@ public class CharacterController : Character
 
         transform.Translate(xAxis, 0, zAxis);
 
+        // ACTIVATE TRAIL
+
         // if right mouse button is held down, the player leaves a trail
 
         // else the trail is not there
 
+        // FLIPPING SPRITE
 
-        if (Input.GetMouseButton(2))
+        if (xAxis < 0)
         {
-            playerTrail.gameObject.SetActive(true);
+            playerSprite.flipX = true;
         }
-        else
+        else if(xAxis > 0)
         {
-            playerTrail.gameObject.SetActive(false);
+            playerSprite.flipX = false;
         }
 
     }
